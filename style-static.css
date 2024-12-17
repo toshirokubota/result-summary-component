@@ -82,6 +82,10 @@ main {
 .category-name {
     margin-left: 1em;
 }
+.summary-category:nth-child(2) {
+    color: hsl(0, 100%, 67%);
+    background-color: hsla(0, 100%, 67%, 0.05);
+}
 .category-score {
     font-weight: 600;
     color: hsl(224, 30%, 27%);
@@ -90,10 +94,6 @@ main {
     margin-left: 0.5em;
     font-weight: 600;
     color: hsla(224, 30%, 27%, 0.5);
-}
-.summary-category:nth-child(2) {
-    color: hsl(0, 100%, 67%);
-    background-color: hsla(0, 100%, 67%, 0.05);
 }
 .summary-category {
     font-weight: 600;

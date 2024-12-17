@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+  <header class="score-card">
+    <div class="score-label">
+      Your Result
+    </div>
+    <div class="score-value-container">
+      <div class="score-value">
+        76
+      </div>
+      <div class="score-value-caption">
+        of 100
+      </div>
+    </div>
+    <div class="score-comment-title">
+      Great
+    </div>
+    <div class="score-comment">
+      You scored higher than 65% of the people who have taken these tests.
+    </div>
+  </header>
+
+  <summary class="summary-card">
+    <section class="summary-title">
+      Summary
+    </section>
+    <section class="summary-category">
+      <img src="./assets/images/icon-reaction.svg" alt="reaction icon"/>
+      <span class="category-name">Reaction</span>
+      <span class="category-score">80</span>
+      <span class="category-score-denom">/ 100</span>
+    </section>
+    <section class="summary-category">
+      <img src="./assets/images/icon-memory.svg" alt="memory icon"/>
+      <span class="category-name">Memory</span>
+      <span class="category-score">92</span>
+      <span class="category-score-denom">/ 100</span>
+    </section>
+    <section class="summary-category">
+      <img src="./assets/images/icon-verbal.svg" alt="verbal icon"/>
+      <span class="category-name">Verbal</span>     
+      <span class="category-score">61</span>
+      <span class="category-score-denom">/ 100</span>
+    </section>
+    <section class="summary-category">      
+      <img src="./assets/images/icon-visual.svg" alt="visual icon"/>
+      <span class="category-name">Visual</span>     
+      <span class="category-score">72</span>
+      <span class="category-score-denom">/ 100</span>
+    </section>
+  </summary>
+  <button class="continue-button">Continue</button>
+</main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+</body>
+
+</html>
