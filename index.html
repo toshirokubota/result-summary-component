@@ -37,13 +37,14 @@
       <div class="score-comment-title" id="assessment-summary"></div>
       <div class="score-comment" id="assessment-description"></div>
     </header>
-
-    <summary class="category-card" id="category-card">
+    <div class="category-card">
       <section class="category-title">
         Summary
       </section>
+      <div class="category-container" id="category-container">
+      </div>
       <button class="continue-button" id="continue-button">Continue</button>
-    </summary>
+    </div>
   </main>
 
   <footer class="attribution">
@@ -106,7 +107,7 @@
   };
 
   {
-    let container = document.getElementById("category-card");
+    let container = document.getElementById("category-container");
     let sum = 0;
     for (let i = 0; i < data.length; i++) {
       let sec = document.createElement("section");
@@ -143,7 +144,7 @@
     document.getElementById('assessment-summary').innerHTML = assessment.summary;
     document.getElementById('assessment-description').innerHTML = assessment.description;
     //move the button to the end of the elements in category-card
-    container.appendChild(document.getElementById('continue-button'));
+    //container.appendChild(document.getElementById('continue-button'));
   }
 </script>
 
