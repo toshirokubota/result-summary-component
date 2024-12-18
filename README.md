@@ -21,7 +21,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [my solution](https://github.com/toshirokubota/result-summary-component)
-- Live Site URL: [live site of my solution](https://your-live-site-url.com)
+- Live Site URL: [live site of my solution](https://toshirokubota.github.io/result-summary-component/)
 
 ## My process
 
