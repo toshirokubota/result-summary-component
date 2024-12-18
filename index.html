@@ -26,25 +26,25 @@
 
 <body>
   <main>
-  <header class="score-card">
-    <div class="score-label">
-      Your Result
-    </div>
-    <div class="score-value-container">
-      <div class="score-value" id="average-score"></div>
-      <div class="score-value-caption">of 100</div>
-    </div>
-    <div class="score-comment-title" id="assessment-summary"></div>
-    <div class="score-comment" id="assessment-description"></div>
-  </header>
+    <header class="score-card">
+      <div class="score-label">
+        Your Result
+      </div>
+      <div class="score-value-container">
+        <div class="score-value" id="average-score"></div>
+        <div class="score-value-caption">of 100</div>
+      </div>
+      <div class="score-comment-title" id="assessment-summary"></div>
+      <div class="score-comment" id="assessment-description"></div>
+    </header>
 
-  <summary class="summary-card" id="summary-card">
-    <section class="summary-title">
-      Summary
-    </section>
-  </summary>
-  <button class="continue-button">Continue</button>
-</main>
+    <summary class="category-card" id="category-card">
+      <section class="category-title">
+        Summary
+      </section>
+      <button class="continue-button" id="continue-button">Continue</button>
+    </summary>
+  </main>
 
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
@@ -53,114 +53,99 @@
 </body>
 
 <script>
-    // fetch('./data.json')
-    //     .then(function (response) {
-    //         return response.json();
-    //     })
-    //     .then(function (data) {
-    //         appendData(data);
-    //     })
-    //     .catch(function (err) {
-    //         console.log('error: ' + err);
-    //     });
-    
-    // const reader = new FileReader();
-    // reader.addEventListener('load', (e) => {
-    //   console.log(e);
-    // })
-    // reader.readAsText(new File('.','data.json'));
-
-      data = [
-        {
-          "category": "Reaction",
-          "score": 80,
-          "icon": "./assets/images/icon-reaction.svg"
-        },
-        {
-          "category": "Memory",
-          "score": 92,
-          "icon": "./assets/images/icon-memory.svg"
-        },
-        {
-          "category": "Verbal",
-          "score": 61,
-          "icon": "./assets/images/icon-verbal.svg"
-        },
-        {
-          "category": "Visual",
-          "score": 72,
-          "icon": "./assets/images/icon-visual.svg"
-        }
-      ];
-    const assess = (score) => {
-      if(score >= 80) {
-        return {        
-          'summary': 'Great',
-          'description': 'You scored higher than 80% of the people who have taken these tests.'
-        }
-      } else if(score >= 65){
-        return {
-        'summary': 'Good',
+  data = [
+    {
+      "category": "Reaction",
+      "score": 80,
+      "icon": "./assets/images/icon-reaction.svg"
+    },
+    {
+      "category": "Memory",
+      "score": 92,
+      "icon": "./assets/images/icon-memory.svg"
+    },
+    {
+      "category": "Verbal",
+      "score": 61,
+      "icon": "./assets/images/icon-verbal.svg"
+    },
+    {
+      "category": "Visual",
+      "score": 72,
+      "icon": "./assets/images/icon-visual.svg"
+    }
+  ];
+  const assess = (score) => {
+    if (score >= 65) {
+      return {
+        'summary': 'Great',
         'description': 'You scored higher than 65% of the people who have taken these tests.'
-        }
-      } else if(score >= 50) {
-        return {
+      }
+    } else if (score >= 50) {
+      return {
+        'summary': 'Good',
+        'description': 'You scored higher than 50% of the people who have taken these tests.'
+      }
+    } else if (score >= 35) {
+      return {
         'summary': 'Fair',
         'description': 'You scored higher than 35% of the people who have taken these tests.'
-        }
-      } else {
+      }
+    } else {
       return {
         'summary': 'Poor',
         'description': 'You scored lower than 35% of the people who have taken these tests.'
-        }
-      };
-    };
-    const colors = {
-      'Reaction': {color: 'hsl(0, 100%, 67%)', backgroundColor: 'hsla(0, 100%, 67%, 0.05)'},
-      'Memory': {color: 'hsl(39, 100%, 56%)', backgroundColor: 'hsla(39, 100%, 56%, 0.05)'},
-      'Verbal': {color: 'hsl(166, 100%, 37%)', backgroundColor: 'hsla(166, 100%, 37%, 0.05)'},
-      'Visual': {color: 'hsl(234, 85%, 45%)', backgroundColor: 'hsla(234, 85%, 45%, 0.05)'}
-    };
-
-    // function appendData(data) {
-    // const colors = ["#F55", "#FFB21E", "#00BB8F", "#1125D6"];
-    {
-      let container = document.getElementById("summary-card");
-      let sum = 0;
-      for (let i = 0; i < data.length; i++) {
-          let sec = document.createElement("section");
-          sec.classList.add('summary-category');
-          container.appendChild(sec);
-          
-          //add icon
-          let img = document.createElement('img');
-          img.src = data[i].icon;
-          img.alt = data[i].category + ' icon';
-          sec.appendChild(img);
-          sec.style.backgroundColor = colors[data[i].category].backgroundColor;
-          
-          let category = document.createElement('span');
-          category.innerHTML = data[i].category;
-          category.classList.add('category-name');
-          category.style.color = colors[data[i].category].color;
-          sec.appendChild(category);
-          let score = document.createElement('span');
-          score.innerHTML = data[i].score;
-          score.classList.add('category-score');
-          sec.appendChild(score);
-          let denom = document.createElement('span');
-          denom.classList.add('category-score-denom');
-          denom.innerHTML = '/ 100';            
-          sec.appendChild(denom);
-
-          sum += data[i].score;
       }
-      let average_score = sum / data.length;
+    };
+  };
+  const colors = {
+    'Reaction': { color: 'hsl(0, 100%, 67%)', backgroundColor: 'hsla(0, 100%, 67%, 0.05)' },
+    'Memory': { color: 'hsl(39, 100%, 56%)', backgroundColor: 'hsla(39, 100%, 56%, 0.05)' },
+    'Verbal': { color: 'hsl(166, 100%, 37%)', backgroundColor: 'hsla(166, 100%, 37%, 0.05)' },
+    'Visual': { color: 'hsl(234, 85%, 45%)', backgroundColor: 'hsla(234, 85%, 45%, 0.05)' }
+  };
 
-      document.getElementById('average-score').innerHTML = parseInt(average_score);
-      let assessment = assess(average_score);
-      document.getElementById('assessment-summary').innerHTML = assessment.summary;
-      document.getElementById('assessment-description').innerHTML = assessment.description;
+  {
+    let container = document.getElementById("category-card");
+    let sum = 0;
+    for (let i = 0; i < data.length; i++) {
+      let sec = document.createElement("section");
+      sec.classList.add('category-item');
+      container.appendChild(sec);
+
+      //add icon
+      let img = document.createElement('img');
+      img.src = data[i].icon;
+      img.alt = data[i].category + ' icon';
+      sec.appendChild(img);
+      sec.style.backgroundColor = colors[data[i].category].backgroundColor;
+
+      let category = document.createElement('span');
+      category.innerHTML = data[i].category;
+      category.classList.add('category-name');
+      category.style.color = colors[data[i].category].color;
+      sec.appendChild(category);
+      let score = document.createElement('span');
+      score.innerHTML = data[i].score;
+      score.classList.add('category-score');
+      sec.appendChild(score);
+      let denom = document.createElement('span');
+      denom.classList.add('category-score-denom');
+      denom.innerHTML = '/ 100';
+      sec.appendChild(denom);
+
+      sum += data[i].score;
+    }
+    let average_score = sum / data.length;
+
+    document.getElementById('average-score').innerHTML = parseInt(average_score);
+    let assessment = assess(average_score);
+    document.getElementById('assessment-summary').innerHTML = assessment.summary;
+    document.getElementById('assessment-description').innerHTML = assessment.description;
+    //move the button to the end of the elements in category-card
+    container.appendChild(document.getElementById('continue-button'));
+    console.log(document.getElementById('continue-button'));
   }
 </script>
+
 </html>

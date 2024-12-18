@@ -20,27 +20,50 @@ body {
     padding: 0px;
     font-family: HankenGrotesk;
 }
+@media only screen and (min-width: 375px) {
+  body {
+    width: 700px;
+    height: 400px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+}    
 
 main {
-    display: flex;
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    display:flex;
     flex-direction: column;
-    gap: 1em;
     align-items: center;
 }
+@media only screen and (min-width: 375px) {
+    main {
+        flex-direction: row;
+    }
+  }    
 
 .score-card {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: hsl(241, 81%, 54%); */
     background-image: linear-gradient(to bottom left, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
     padding: 2em;
     border-radius: 0 0 2em 2em;
     color: hsl(221, 100%, 96%);
 }
+@media only screen and (min-width: 375px) {
+    .score-card {
+      width: 50%;
+      height: 100%;
+      border-radius: 2em;
+    }
+  }    
 .score-label {
     font-size: 1.0em;
     font-weight: 600;
+    padding: 1em;
 }
 .score-value-container {
     padding: 0.6em;
@@ -49,35 +72,68 @@ main {
     background-image: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
     border-radius: 50%;
     /* border: 1px solid red; */
+    /* display: grid;
+    place-items: center;   */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
+}
+.score-label {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: hsl(241, 100%, 89%);
 }
 .score-value {
     color: white;
     font-size: 4rem;
     font-weight: 600;
-    text-align: center;
 }
 .score-value-caption {
     font-size: 1em;
     color: hsl(241, 100%, 89%);
     text-align: center;
+    font-weight: 600;
 }
 .score-comment-title {
+    color: white;
     font-size: 1.5em;
     font-weight: 600;
+    padding: 1em;
 }
 .score-comment {
     text-align: center;
+    color: hsl(241, 100%, 89%);
 }
-.summary-card {
-    width: 90%;
-    margin: 1em 3em;
+.category-card {
+    width: 100%;
+    /* margin: 1em 2em 0em 2em; */
+    padding: 1em;
 }
-.summary-category {
+@media only screen and (min-width: 375px) {
+    .category-card {
+      width: 50%;
+    }
+  }    
+/* @media only screen and (min-width: 375px) {
+    .category-card {
+      width: 50%;
+      height: 100%;
+    }
+  }     */
+.category-title {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: hsl(224, 30%, 27%);
+}
+.category-item {
     display: flex;
     align-items: center;
     margin: 1em 0em;
     padding: 1em;
-    border-radius: 1em;
+    border-radius: 0.75em;
+    font-weight: 600;
 }
 .category-name {
     margin-left: 1em;
@@ -91,34 +147,15 @@ main {
     font-weight: 600;
     color: hsla(224, 30%, 27%, 0.5);
 }
-.summary-category:nth-child(2) {
-    color: hsl(0, 100%, 67%);
-    background-color: hsla(0, 100%, 67%, 0.05);
-}
-.summary-category {
-    font-weight: 600;
-}
-.summary-category:nth-child(3) {
-    color: hsl(39, 100%, 56%);
-    background-color:hsla(39, 100%, 56%, 0.05);
-}
-.summary-category:nth-child(4) {
-    color: hsl(166, 100%, 37%);
-    background-color:hsla(166, 100%, 37%, 0.05);
-}
-.summary-category:nth-child(5) {
-    color: hsl(234, 85%, 45%);
-    background-color:hsla(234, 85%, 45%, 0.05);
-}
 .category-score {
     margin-left: auto;
 }
 .continue-button {
-    width: 85%;
+    width: 100%;
     font-family: HankenGrotesk;
-    font-size: 1.0em;
+    font-size: 1.1em;
     font-weight: 700;
-    padding: 1em;
+    padding: 1em 0em;
     margin: 0.25em;
     border-radius: 2em;
     background-color: hsl(224, 30%, 27%);
